@@ -1535,35 +1535,9 @@
   </ul>
 </footer>
 
->
-var totalSeconds = 86399;
-function tickDown() {
-  var el = document.getElementById('countdown');
-  if (!el) return;
-  var h = Math.floor(totalSeconds / 3600);
-  var m = Math.floor((totalSeconds % 3600) / 60);
-  var s = totalSeconds % 60;
-  el.textContent = (h<10?'0':'') + h + ':' + (m<10?'0':'') + m + ':' + (s<10?'0':'') + s;
-  if (totalSeconds > 0) totalSeconds--;
-}
-tickDown();
-setInterval(tickDown, 1000);
-</script>
 
-<script>
-var totalSeconds = 86399;
-function tickDown() {
-  var el = document.getElementById('countdown');
-  if (!el) return;
-  var h = Math.floor(totalSeconds / 3600);
-  var m = Math.floor((totalSeconds % 3600) / 60);
-  var s = totalSeconds % 60;
-  el.textContent = (h<10?'0':'') + h + ':' + (m<10?'0':'') + m + ':' + (s<10?'0':'') + s;
-  if (totalSeconds > 0) totalSeconds--;
-}
-tickDown();
-setInterval(tickDown, 1000);
-</script>
+
+<script
 
 <!-- Typing Effect -->
 <script>
@@ -1626,5 +1600,63 @@ checkMobile();
 window.addEventListener('resize', checkMobile);
 </script>
 
+
+<script>
+// Countdown
+var totalSeconds = 86399;
+function tickDown() {
+  var el = document.getElementById('countdown');
+  if (!el) return;
+  var h = Math.floor(totalSeconds / 3600);
+  var m = Math.floor((totalSeconds % 3600) / 60);
+  var s = totalSeconds % 60;
+  el.textContent = (h<10?'0':'') + h + ':' + (m<10?'0':'') + m + ':' + (s<10?'0':'') + s;
+  if (totalSeconds > 0) totalSeconds--;
+}
+tickDown();
+setInterval(tickDown, 1000);
+
+// Typing Effect
+var words = ['Work For You', 'Make You Money', 'Run 24/7', 'Scale Your Business', 'Save You Time'];
+var wordIndex = 0, charIndex = 0, isDeleting = false;
+function type() {
+  var el = document.getElementById('typing-text');
+  if (!el) return;
+  var word = words[wordIndex];
+  if (isDeleting) {
+    el.textContent = word.substring(0, charIndex--);
+    if (charIndex < 0) { isDeleting = false; wordIndex = (wordIndex + 1) % words.length; setTimeout(type, 500); return; }
+  } else {
+    el.textContent = word.substring(0, charIndex++);
+    if (charIndex > word.length) { isDeleting = true; setTimeout(type, 3500); return; }
+  }
+  setTimeout(type, isDeleting ? 80 : 150);
+}
+type();
+
+// Mobile hamburger menu
+function checkMobile() {
+  var ham = document.getElementById('hamburger');
+  if (ham) ham.style.display = window.innerWidth <= 768 ? 'flex' : 'none';
+}
+function toggleMenu() {
+  var menu = document.getElementById('mobile-menu');
+  if (!menu) return;
+  menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+}
+checkMobile();
+window.addEventListener('resize', checkMobile);
+
+// Visitor Counter
+var count = Math.floor(Math.random() * 17) + 18;
+var vcEl = document.getElementById('visitor-count');
+if (vcEl) {
+  vcEl.textContent = count;
+  setInterval(function() {
+    count = Math.max(12, Math.min(40, count + (Math.random() > 0.5 ? 1 : -1)));
+    vcEl.textContent = count;
+  }, 5000);
+}
+</script>
 </body>
 </html>
