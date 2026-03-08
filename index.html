@@ -809,10 +809,12 @@
   /* ===== RESPONSIVE / MOBILE ===== */
 
   @media (max-width: 768px) {
-    nav { padding: 14px 16px !important; }
-    .logo svg { width: 28px !important; height: 28px !important; }
-    .logo span { font-size: 15px !important; }
-    .logo { gap: 7px !important; }
+    nav { padding: 14px 16px !important; top: 44px !important; }
+    .logo svg { width: 26px !important; height: 26px !important; }
+    .logo span { font-size: 13px !important; }
+    .logo { gap: 6px !important; }
+    .hamburger { display: flex !important; }
+    .nav-links { display: none !important; }
   }
 
   @media (max-width: 1024px) {
@@ -906,6 +908,8 @@
     /* Pricing */
     .pricing-grid { grid-template-columns: 1fr !important; }
 
+    /* Services */
+    #services-grid { grid-template-columns: 1fr !important; }
     /* Portfolio */
     #portfolio > div:last-child { grid-template-columns: 1fr !important; }
     #portfolio { padding: 60px 20px !important; }
@@ -1128,67 +1132,80 @@
 <section class="section" id="services">
   <div class="section-label">What We Do</div>
   <h2>Our Services</h2>
-  <div class="services-grid">
-    <div class="service-card reveal">
-      <div class="service-number">01</div>
-      <div class="service-icon"><div style="background:#1a0a00;border-bottom:1px solid #1a1a1a;padding:28px 40px;display:flex;align-items:center;gap:16px;">
-      <div style="width:48px;height:48px;background:#0f0f0f;border:1px solid #00e676;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:22px;">🎬</div>
-      <div style="width:40px;height:2px;background:#00e676;opacity:0.4;"></div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;" id="services-grid">
+
+    <div style="background:#1a1a1a;border:1px solid #2a2a2a;overflow:hidden;transition:transform 0.3s;" onmouseover="this.style.transform='translateY(-8px)'" onmouseout="this.style.transform='translateY(0)'">
+      <div style="background:linear-gradient(135deg,#003300,#080808);padding:40px 32px;text-align:center;">
+        <div style="font-size:52px;">🎬</div>
+      </div>
+      <div style="padding:28px;">
+        <div style="background:#00e676;color:#050505;font-size:10px;letter-spacing:2px;padding:4px 12px;display:inline-block;margin-bottom:14px;font-family:'Playfair Display',serif;font-weight:700;">YOUTUBE</div>
+        <h3 style="font-family:'Playfair Display',serif;font-weight:700;font-size:18px;margin-bottom:10px;">YouTube Automation</h3>
+        <p style="color:#888;font-size:14px;line-height:1.7;margin-bottom:16px;">Fully automated channels. AI scripts, voiceovers, footage, thumbnails and daily uploads — zero effort.</p>
+        <div style="font-family:'Playfair Display',serif;font-weight:700;color:#00e676;font-size:16px;">From $500/month</div>
+      </div>
     </div>
-      <div class="service-title">YouTube Automation</div>
-      <p class="service-desc">Fully automated YouTube channels. We build AI pipelines that generate scripts, voiceovers, footage, thumbnails and upload videos daily — without you lifting a finger.</p>
-      <div class="service-price">From $500/month</div>
+
+    <div style="background:#1a1a1a;border:1px solid #2a2a2a;overflow:hidden;transition:transform 0.3s;" onmouseover="this.style.transform='translateY(-8px)'" onmouseout="this.style.transform='translateY(0)'">
+      <div style="background:linear-gradient(135deg,#001a00,#080808);padding:40px 32px;text-align:center;">
+        <div style="font-size:52px;">🤖</div>
+      </div>
+      <div style="padding:28px;">
+        <div style="background:#00e676;color:#050505;font-size:10px;letter-spacing:2px;padding:4px 12px;display:inline-block;margin-bottom:14px;font-family:'Playfair Display',serif;font-weight:700;">AI CHATBOT</div>
+        <h3 style="font-family:'Playfair Display',serif;font-weight:700;font-size:18px;margin-bottom:10px;">AI Chatbots</h3>
+        <p style="color:#888;font-size:14px;line-height:1.7;margin-bottom:16px;">Custom chatbots for WhatsApp, Telegram or your website. Answers customers 24/7 automatically.</p>
+        <div style="font-family:'Playfair Display',serif;font-weight:700;color:#00e676;font-size:16px;">From $300 setup</div>
+      </div>
     </div>
-    <div class="service-card reveal">
-      <div class="service-number">02</div>
-      <div class="service-icon"><div style="background:#001a00;border-bottom:1px solid #1a1a1a;padding:28px 40px;display:flex;align-items:center;gap:16px;">
-      <div style="width:48px;height:48px;background:#0f0f0f;border:1px solid #00e676;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:22px;">🤖</div>
-      <div style="width:40px;height:2px;background:#00e676;opacity:0.4;"></div>
+
+    <div style="background:#1a1a1a;border:1px solid #2a2a2a;overflow:hidden;transition:transform 0.3s;" onmouseover="this.style.transform='translateY(-8px)'" onmouseout="this.style.transform='translateY(0)'">
+      <div style="background:linear-gradient(135deg,#001a1a,#080808);padding:40px 32px;text-align:center;">
+        <div style="font-size:52px;">📱</div>
+      </div>
+      <div style="padding:28px;">
+        <div style="background:#00e676;color:#050505;font-size:10px;letter-spacing:2px;padding:4px 12px;display:inline-block;margin-bottom:14px;font-family:'Playfair Display',serif;font-weight:700;">SOCIAL MEDIA</div>
+        <h3 style="font-family:'Playfair Display',serif;font-weight:700;font-size:18px;margin-bottom:10px;">Social Media Automation</h3>
+        <p style="color:#888;font-size:14px;line-height:1.7;margin-bottom:16px;">Auto-posting to TikTok, Instagram, Twitter and Facebook daily with AI captions and hashtags.</p>
+        <div style="font-family:'Playfair Display',serif;font-weight:700;color:#00e676;font-size:16px;">From $400/month</div>
+      </div>
     </div>
-      <div class="service-title">AI Chatbots</div>
-      <p class="service-desc">Custom AI chatbots for your business website, WhatsApp, or Telegram. Answers customer questions 24/7, books appointments, and handles support automatically.</p>
-      <div class="service-price">From $300 setup</div>
+
+    <div style="background:#1a1a1a;border:1px solid #2a2a2a;overflow:hidden;transition:transform 0.3s;" onmouseover="this.style.transform='translateY(-8px)'" onmouseout="this.style.transform='translateY(0)'">
+      <div style="background:linear-gradient(135deg,#1a1a00,#080808);padding:40px 32px;text-align:center;">
+        <div style="font-size:52px;">✍️</div>
+      </div>
+      <div style="padding:28px;">
+        <div style="background:#00e676;color:#050505;font-size:10px;letter-spacing:2px;padding:4px 12px;display:inline-block;margin-bottom:14px;font-family:'Playfair Display',serif;font-weight:700;">CONTENT</div>
+        <h3 style="font-family:'Playfair Display',serif;font-weight:700;font-size:18px;margin-bottom:10px;">AI Content Writing</h3>
+        <p style="color:#888;font-size:14px;line-height:1.7;margin-bottom:16px;">Blog posts, emails, product descriptions — AI-generated and SEO optimized at scale.</p>
+        <div style="font-family:'Playfair Display',serif;font-weight:700;color:#00e676;font-size:16px;">From $200/month</div>
+      </div>
     </div>
-    <div class="service-card reveal">
-      <div class="service-number">03</div>
-      <div class="service-icon"><div style="background:#001a1a;border-bottom:1px solid #1a1a1a;padding:28px 40px;display:flex;align-items:center;gap:16px;">
-      <div style="width:48px;height:48px;background:#0f0f0f;border:1px solid #00e676;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:22px;">📱</div>
-      <div style="width:40px;height:2px;background:#00e676;opacity:0.4;"></div>
+
+    <div style="background:#1a1a1a;border:1px solid #2a2a2a;overflow:hidden;transition:transform 0.3s;" onmouseover="this.style.transform='translateY(-8px)'" onmouseout="this.style.transform='translateY(0)'">
+      <div style="background:linear-gradient(135deg,#0a001a,#080808);padding:40px 32px;text-align:center;">
+        <div style="font-size:52px;">⚙️</div>
+      </div>
+      <div style="padding:28px;">
+        <div style="background:#00e676;color:#050505;font-size:10px;letter-spacing:2px;padding:4px 12px;display:inline-block;margin-bottom:14px;font-family:'Playfair Display',serif;font-weight:700;">CUSTOM AI</div>
+        <h3 style="font-family:'Playfair Display',serif;font-weight:700;font-size:18px;margin-bottom:10px;">Custom AI Tools</h3>
+        <p style="color:#888;font-size:14px;line-height:1.7;margin-bottom:16px;">Lead generators, price analyzers, scoring systems — custom AI tools built for your business.</p>
+        <div style="font-family:'Playfair Display',serif;font-weight:700;color:#00e676;font-size:16px;">From $800 one-time</div>
+      </div>
     </div>
-      <div class="service-title">Social Media Automation</div>
-      <p class="service-desc">Automated posting to TikTok, Instagram, Twitter and Facebook. AI generates captions, hashtags and schedules posts for maximum reach and engagement.</p>
-      <div class="service-price">From $400/month</div>
+
+    <div style="background:linear-gradient(135deg,rgba(0,230,118,0.08),#1a1a1a);border:1px solid rgba(0,230,118,0.2);overflow:hidden;transition:transform 0.3s;" onmouseover="this.style.transform='translateY(-8px)'" onmouseout="this.style.transform='translateY(0)'">
+      <div style="background:linear-gradient(135deg,#003300,#080808);padding:40px 32px;text-align:center;">
+        <div style="font-size:52px;">🚀</div>
+      </div>
+      <div style="padding:28px;">
+        <div style="background:#00e676;color:#050505;font-size:10px;letter-spacing:2px;padding:4px 12px;display:inline-block;margin-bottom:14px;font-family:'Playfair Display',serif;font-weight:700;">FULL PACKAGE</div>
+        <h3 style="font-family:'Playfair Display',serif;font-weight:700;font-size:18px;margin-bottom:10px;">Full Business Automation</h3>
+        <p style="color:#888;font-size:14px;line-height:1.7;margin-bottom:16px;">We automate your entire business — marketing, support, content. Maximum results, minimum effort.</p>
+        <div style="font-family:'Playfair Display',serif;font-weight:700;color:#00e676;font-size:16px;">From $2,000/month</div>
+      </div>
     </div>
-    <div class="service-card reveal">
-      <div class="service-number">04</div>
-      <div class="service-icon"><div style="background:#1a1a00;border-bottom:1px solid #1a1a1a;padding:28px 40px;display:flex;align-items:center;gap:16px;">
-      <div style="width:48px;height:48px;background:#0f0f0f;border:1px solid #00e676;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:22px;">✍️</div>
-      <div style="width:40px;height:2px;background:#00e676;opacity:0.4;"></div>
-    </div>
-      <div class="service-title">AI Content Writing</div>
-      <p class="service-desc">Blog posts, product descriptions, email campaigns and more — generated by AI and optimized for SEO. Consistent content at scale without the writer's fees.</p>
-      <div class="service-price">From $200/month</div>
-    </div>
-    <div class="service-card reveal">
-      <div class="service-number">05</div>
-      <div class="service-icon"><div style="background:#0a001a;border-bottom:1px solid #1a1a1a;padding:28px 40px;display:flex;align-items:center;gap:16px;">
-      <div style="width:48px;height:48px;background:#0f0f0f;border:1px solid #00e676;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:22px;">⚙️</div>
-      <div style="width:40px;height:2px;background:#00e676;opacity:0.4;"></div>
-    </div>
-      <div class="service-title">Custom AI Tools</div>
-      <p class="service-desc">Need something specific? We build custom AI-powered tools for your business — lead generators, price analyzers, customer scoring systems, and more.</p>
-      <div class="service-price">From $800 one-time</div>
-    </div>
-    <div class="service-card reveal" style="background: linear-gradient(135deg, rgba(0,230,118,0.05), var(--grey)); border-color: rgba(0,230,118,0.15);">
-      <div class="service-number">06</div>
-      <div class="service-icon"><div style="background:#001a0a;border-bottom:1px solid #1a1a1a;padding:28px 40px;display:flex;align-items:center;gap:16px;">
-      <div style="width:48px;height:48px;background:#0f0f0f;border:1px solid #00e676;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:22px;">🚀</div>
-      <div style="width:40px;height:2px;background:#00e676;opacity:0.4;"></div>
-    </div>
-      <div class="service-title">Full Business Automation</div>
-      <p class="service-desc">We audit your entire business and automate everything possible — from marketing to customer service to content creation. Maximum efficiency, minimum effort.</p>
-      <div class="service-price" style="color: #5c9eff;">From $2,000/month</div>
-    </div>
+
   </div>
 </section>
 
